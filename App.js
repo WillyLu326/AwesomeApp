@@ -21,13 +21,26 @@ const instructions = Platform.select({
 });
 
 export default class App extends Component {
+
+  state = {
+    text: ''
+  }
+
+  textChangeHandler = value => {
+    this.setState({ text: value });
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
           Welcome
         </Text>
-        <TextInput />
+        <TextInput 
+          style={{width: 300}}
+          value={this.state.text}
+          textChangeHandler={this.textChangeHandler}
+        />
       </View>
     );
   }
