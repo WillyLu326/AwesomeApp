@@ -43,6 +43,7 @@ export default class App extends Component {
           value={this.state.text}
           onChangeText={this.textChangeHandler}
         />
+        <Button title="Add"  />
       </View>
     );
   }
