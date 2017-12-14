@@ -38,6 +38,7 @@ export default class App extends Component {
         </Text>
         <TextInput 
           style={{width: 300}}
+          placeholder="Awesome Input"
           value={this.state.text}
           onChangeText={this.textChangeHandler}
         />
