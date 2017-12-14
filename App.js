@@ -39,7 +39,7 @@ export default class App extends Component {
         <TextInput 
           style={{width: 300}}
           value={this.state.text}
-          textChangeHandler={this.textChangeHandler}
+          onChangeText={this.textChangeHandler}
         />
       </View>
     );
