@@ -24,11 +24,18 @@ const instructions = Platform.select({
 export default class App extends Component {
 
   state = {
-    text: ''
+    text: '',
+    places: []
   }
 
   textChangeHandler = value => {
     this.setState({ text: value });
+  }
+
+  displayPlaceHandler = () => {
+    this.setState(preState => {
+      return { places: preState.places.concat(this.state.text) };
+    });
   }
 
   render() {
@@ -46,7 +53,9 @@ export default class App extends Component {
           />
           <Button
             style={styles.placeButton}
-            title="Add"  />
+            title="Add"
+            onPress={}
+          />
         </View>
       </View>
     );
