@@ -39,6 +39,12 @@ export default class App extends Component {
   }
 
   render() {
+    const places = this.state.places.map((place, index) => {
+      return (
+        <Text key={index}>{place}</Text>
+      );
+    });
+
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
@@ -57,6 +63,7 @@ export default class App extends Component {
             onPress={this.displayPlaceHandler}
           />
         </View>
+        <View>{places}</View>
       </View>
     );
   }
