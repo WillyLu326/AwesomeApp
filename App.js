@@ -54,7 +54,7 @@ export default class App extends Component {
           <Button
             style={styles.placeButton}
             title="Add"
-            onPress={}
+            onPress={this.displayPlaceHandler}
           />
         </View>
       </View>
