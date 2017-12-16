@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 import ListItem from './../ListItem/ListItem';
 
@@ -11,8 +11,14 @@ const PlaceList = (props) => {
   })
 
   return (
-    <View>{places}</View>
+    <View style={styles.placeList}>{places}</View>
   );
 }
+
+const styles = StyleSheet.create({
+  placeList: {
+    width: '100%'
+  }
+});
 
 export default PlaceList;

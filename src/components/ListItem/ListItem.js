@@ -12,7 +12,8 @@ const ListItem = (props) => {
 const styles = StyleSheet.create({
   listItem: {
     width: '100%',
-    backgroundColor: '#eeeeee'
+    backgroundColor: '#eeeeee',
+    padding: 10
   }
 });
 
