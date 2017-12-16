@@ -13,7 +13,7 @@ class PlaceInput extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.inputContainer}>
         <TextInput 
           style={styles.placeInput}
           placeholder="Awesome Input"
@@ -31,6 +31,12 @@ class PlaceInput extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  inputContainer: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
   placeInput: {
     width: '70%'
   },
