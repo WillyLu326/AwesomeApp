@@ -15,6 +15,7 @@ import {
 } from 'react-native';
 
 import PlaceList from './src/components/PlaceList/PlaceList';
+import PlaceInput from './src/components/PlaceInput/PlaceInput';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -26,18 +27,11 @@ const instructions = Platform.select({
 export default class App extends Component {
 
   state = {
-    text: '',
     places: []
   }
 
-  textChangeHandler = value => {
-    this.setState({ text: value });
-  }
-
-  displayPlaceHandler = () => {
-    this.setState(preState => {
-      return { places: preState.places.concat(this.state.text) };
-    });
+  displayPlaceHandler = (value) => {
+    this.setState({ places: this.state.places.concat(value) });
   }
 
   render() {
@@ -46,19 +40,7 @@ export default class App extends Component {
         <Text style={styles.welcome}>
           Welcome
         </Text>
-        <View style={styles.inputContainer}>
-          <TextInput 
-            style={styles.placeInput}
-            placeholder="Awesome Input"
-            value={this.state.text}
-            onChangeText={this.textChangeHandler}
-          />
-          <Button
-            style={styles.placeButton}
-            title="Add"
-            onPress={this.displayPlaceHandler}
-          />
-        </View>
+        <PlaceInput displayPlace={this.displayPlaceHandler} />
         <PlaceList places={this.state.places} />
       </View>
     );
