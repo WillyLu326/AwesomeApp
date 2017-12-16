@@ -1,0 +1,17 @@
+use admin
+db.createUser(
+  {
+    user: "willy",
+    pwd: "admin",
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+  }
+)
+
+
+
+$ nano /etc/mongod.conf
+
+# /etc/mongod.conf
+
+# Listen to local and LAN interfaces.
+bind_ip = 127.0.0.1
