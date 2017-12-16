@@ -1,9 +1,11 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 
 const ListItem = (props) => {
   return (
-    <Text>{props.name}</Text>
+    <View>
+      <Text>{props.name}</Text>
+    </View>
   );
 }
 
