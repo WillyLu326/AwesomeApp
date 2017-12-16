@@ -14,7 +14,7 @@ import {
   View
 } from 'react-native';
 
-import ListItem from './src/components/ListItem/ListItem';
+import PlaceList from './src/components/PlaceList/PlaceList';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -41,12 +41,6 @@ export default class App extends Component {
   }
 
   render() {
-    const places = this.state.places.map((place, index) => {
-      return (
-        <ListItem key={index} name={place}></ListItem>
-      );
-    });
-
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
@@ -65,7 +59,7 @@ export default class App extends Component {
             onPress={this.displayPlaceHandler}
           />
         </View>
-        <View>{places}</View>
+        <PlaceList places={this.state.places} />
       </View>
     );
   }
