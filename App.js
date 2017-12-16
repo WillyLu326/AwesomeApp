@@ -14,6 +14,8 @@ import {
   View
 } from 'react-native';
 
+import ListItem from './src/components/ListItem/ListItem';
+
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',
@@ -41,7 +43,7 @@ export default class App extends Component {
   render() {
     const places = this.state.places.map((place, index) => {
       return (
-        <Text key={index}>{place}</Text>
+        <ListItem key={index} name={place}></ListItem>
       );
     });
 
