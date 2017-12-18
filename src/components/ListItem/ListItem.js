@@ -1,13 +1,13 @@
 import React from 'react';
-import { Text, View, StyleSheet, TouchableWithoutFeedback } from 'react-native';
+import { Text, View, StyleSheet, TouchableHighlight } from 'react-native';
 
 const ListItem = (props) => {
   return (
-    <TouchableWithoutFeedback onPress={props.deleteItem}>
+    <TouchableHighlight onPress={props.deleteItem}>
       <View style={styles.listItem}>
         <Text>{props.name}</Text>
       </View>
-    </TouchableWithoutFeedback>
+    </TouchableHighlight>
   );
 }
 
