@@ -4,9 +4,17 @@ import { View, StyleSheet } from 'react-native';
 import ListItem from './../ListItem/ListItem';
 
 const PlaceList = (props) => {
+  deleteItemHandler = (index) => {
+    alert(index);
+  }
+
   const places = props.places.map((place, index) => {
     return (
-      <ListItem key={index} index={index} name={place}></ListItem>
+      <ListItem 
+        key={index} 
+        name={place} 
+        deleteItem={() => deleteItemHandler(index)}>
+      </ListItem>
     );
   })
 
