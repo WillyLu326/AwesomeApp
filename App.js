@@ -34,6 +34,14 @@ export default class App extends Component {
     this.setState({ places: this.state.places.concat(value) });
   }
 
+  deletePlaceHandler = (index) => {
+    this.setState(prevState => {
+      return {
+        places: prevState.places.filter((_, i) => i !== index)
+      }
+    })
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -41,7 +49,7 @@ export default class App extends Component {
           Welcome
         </Text>
         <PlaceInput displayPlace={this.displayPlaceHandler} />
-        <PlaceList places={this.state.places} />
+        <PlaceList places={this.state.places} deletePlace={this.deletePlaceHandler} />
       </View>
     );
   }
