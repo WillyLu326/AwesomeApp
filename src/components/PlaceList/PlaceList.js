@@ -6,7 +6,7 @@ import ListItem from './../ListItem/ListItem';
 const PlaceList = (props) => {
   const places = props.places.map((place, index) => {
     return (
-      <ListItem key={index} name={place}></ListItem>
+      <ListItem key={index} index={index} name={place}></ListItem>
     );
   })
 
