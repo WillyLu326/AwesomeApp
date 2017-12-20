@@ -11,6 +11,7 @@ import {
   Text,
   TextInput,
   Button,
+  FlatList,
   View
 } from 'react-native';
 
@@ -27,17 +28,20 @@ const instructions = Platform.select({
 export default class App extends Component {
 
   state = {
-    places: []
+    places: [],
+    index: 0
   }
 
   displayPlaceHandler = (value) => {
-    this.setState({ places: this.state.places.concat({ id: Math.random(), name: value }) });
+    this.setState({ 
+      places: this.state.places.concat({ key: Math.random(), name: value }),
+     });
   }
 
-  deletePlaceHandler = (index) => {
+  deletePlaceHandler = (id) => {
     this.setState(prevState => {
       return {
-        places: prevState.places.filter((_, i) => i !== index)
+        places: prevState.places.filter((_, item) => item.key !== id)
       }
     })
   }
@@ -50,6 +54,7 @@ export default class App extends Component {
         </Text>
         <PlaceInput displayPlace={this.displayPlaceHandler} />
         <PlaceList places={this.state.places} deletePlace={this.deletePlaceHandler} />
+      
       </View>
     );
   }

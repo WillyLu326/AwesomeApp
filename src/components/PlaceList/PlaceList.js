@@ -11,9 +11,9 @@ const PlaceList = (props) => {
       data={props.places}
       renderItem={(info) => {
         return (
-          <ListItem 
-            name={info.item.name} 
-            deleteItem={() => props.deletePlace(1)}>
+          <ListItem
+            name={info.item.name}
+            deleteItem={() => props.deletePlace(info.key)}>
           </ListItem>
         );
       }}>
