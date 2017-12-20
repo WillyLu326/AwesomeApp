@@ -31,7 +31,7 @@ export default class App extends Component {
   }
 
   displayPlaceHandler = (value) => {
-    this.setState({ places: this.state.places.concat(value) });
+    this.setState({ places: this.state.places.concat({ id: Math.random(), name: value }) });
   }
 
   deletePlaceHandler = (index) => {
