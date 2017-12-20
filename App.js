@@ -28,8 +28,7 @@ const instructions = Platform.select({
 export default class App extends Component {
 
   state = {
-    places: [],
-    index: 0
+    places: []
   }
 
   displayPlaceHandler = (value) => {

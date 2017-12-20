@@ -13,7 +13,7 @@ const PlaceList = (props) => {
         return (
           <ListItem
             name={info.item.name}
-            deleteItem={() => props.deletePlace(info.key)}>
+            deleteItem={() => props.deletePlace(info.item.key)}>
           </ListItem>
         );
       }}>
