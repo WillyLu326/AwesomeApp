@@ -37,10 +37,10 @@ export default class App extends Component {
      });
   }
 
-  deletePlaceHandler = (id) => {
+  deletePlaceHandler = (key) => {
     this.setState(prevState => {
       return {
-        places: prevState.places.filter((_, item) => item.key !== id)
+        places: prevState.places.filter((item) => item.key !== key)
       }
     })
   }
