@@ -14,7 +14,8 @@ import {
   FlatList,
   View
 } from 'react-native';
-import { connect } from 'react-native';
+import { connect } from 'react-redux';
+import { addPlace, deletePlace } from './src/store/actions/placesAction';
  
 import PlaceList from './src/components/PlaceList/PlaceList';
 import PlaceInput from './src/components/PlaceInput/PlaceInput';
@@ -70,5 +71,17 @@ const styles = StyleSheet.create({
   }
 });
 
+const mapStateToProps = state => {
+  return {
+    places: state.placeReducer.places
+  }
+};
 
-export default connect()(App);
+const mapDispatchToProps = dispatch => {
+  return {
+    onAddPlace: (placeName) => dispatch(addPlace(placeName)),
+    onDeletePlace: (key) => dispatch(deletePlace(key))
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
