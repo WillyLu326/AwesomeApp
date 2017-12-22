@@ -29,22 +29,12 @@ const instructions = Platform.select({
 
 class App extends Component {
 
-  state = {
-    places: []
-  }
-
   displayPlaceHandler = (value) => {
-    this.setState({ 
-      places: this.state.places.concat({ key: Math.random(), name: value }),
-     });
+    this.props.onAddPlace(value);
   }
 
   deletePlaceHandler = (key) => {
-    this.setState(prevState => {
-      return {
-        places: prevState.places.filter((item) => item.key !== key)
-      }
-    })
+    this.props.onAddPlace(key);
   }
 
   render() {
@@ -54,7 +44,7 @@ class App extends Component {
           Welcome
         </Text>
         <PlaceInput displayPlace={this.displayPlaceHandler} />
-        <PlaceList places={this.state.places} deletePlace={this.deletePlaceHandler} />
+        <PlaceList places={this.props.places} deletePlace={this.deletePlaceHandler} />
       
       </View>
     );
