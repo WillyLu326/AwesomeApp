@@ -14,7 +14,8 @@ import {
   FlatList,
   View
 } from 'react-native';
-
+import { connect } from 'react-native';
+ 
 import PlaceList from './src/components/PlaceList/PlaceList';
 import PlaceInput from './src/components/PlaceInput/PlaceInput';
 
@@ -25,7 +26,7 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-export default class App extends Component {
+class App extends Component {
 
   state = {
     places: []
@@ -68,3 +69,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   }
 });
+
+
+export default connect()(App);
