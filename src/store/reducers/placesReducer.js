@@ -10,7 +10,10 @@ const reducer = (state = initState, action) => {
     case ADD_PLACE:
       return {
         ...state,
-        places: state.places.concat(action.payload)
+        places: state.places.concat({
+          key: Math.random(),
+          name: action.payload
+        })
       }
     case DELETE_PLACE:
       return {
