@@ -6,3 +6,10 @@ const addPlace = (place) => {
     payload: place
   };
 };
+
+const deletePlace = (placeKey) => {
+  return {
+    type: DELETE_PLACE,
+    payload: placeKey
+  };
+};
