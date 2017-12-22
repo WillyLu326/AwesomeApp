@@ -14,12 +14,12 @@ const placeReducer = (state = initState, action) => {
           key: Math.random(),
           name: action.payload
         })
-      }
+      };
     case DELETE_PLACE:
       return {
         ...state,
         places: state.places.filter(place => place.key !== action.payload)
-      }
+      };
     default:
       return state;
   }

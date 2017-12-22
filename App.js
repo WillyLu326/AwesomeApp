@@ -34,7 +34,7 @@ class App extends Component {
   }
 
   deletePlaceHandler = (key) => {
-    this.props.onAddPlace(key);
+    this.props.onDeletePlace(key);
   }
 
   render() {
@@ -44,8 +44,9 @@ class App extends Component {
           Welcome
         </Text>
         <PlaceInput displayPlace={this.displayPlaceHandler} />
-        <PlaceList places={this.props.places} deletePlace={this.deletePlaceHandler} />
-      
+        <PlaceList 
+          places={this.props.places} 
+          deletePlace={this.deletePlaceHandler} />
       </View>
     );
   }
