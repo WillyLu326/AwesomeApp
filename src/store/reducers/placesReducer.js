@@ -12,6 +12,11 @@ const reducer = (state = initState, action) => {
         ...state,
         places: state.places.concat(action.payload)
       }
+    case DELETE_PLACE:
+      return {
+        ...state,
+        places: state.places.filter(place => place.key !== action.payload)
+      }
     default:
       return state;
   }
