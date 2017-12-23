@@ -5,7 +5,6 @@ const initState = {
   selectedPlace: null
 };
 
-//
 const placeReducer = (state = initState, action) => {
   switch (action.type) {
     case ADD_PLACE:
