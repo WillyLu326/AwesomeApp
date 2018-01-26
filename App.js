@@ -28,7 +28,7 @@ const instructions = Platform.select({
 });
 
 class App extends Component {
-
+  // display handler
   displayPlaceHandler = (value) => {
     this.props.onAddPlace(value);
   }
